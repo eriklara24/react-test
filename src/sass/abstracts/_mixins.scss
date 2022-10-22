@@ -1,0 +1,21 @@
+@mixin display-flex {
+    display: -webkit-box; // OLD - iOS 6-, Safari 3.1-6
+    display: -moz-box; // OLD - Firefox 19- (buggy but mostly works)
+    display: -ms-flexbox; // TWEENER - IE 10
+    display: -webkit-flex; // NEW - Chrome
+    display: flex; // NEW, Spec - Opera 12.1, Firefox 20+
+  }
+
+  @mixin center-flex {
+    @include display-flex();
+    align-items: center;
+    justify-content: center;
+  }
+
+  @mixin center-absolute {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
